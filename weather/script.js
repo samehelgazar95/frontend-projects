@@ -1,14 +1,17 @@
 const weatherApiKey = 'c0e076f41f7acce961e94eab8c4ddff1';
 const timeApiKey = 'BXV97YSUDSHE';
+let cityName = 'morocco';
+
 const form = document.querySelector('.section1 form');
 const inputValue = form[0].value;
 
 // Weather Elements
 const cityAndCountry = document.querySelector('.city-name');
 const mainIcon = document.querySelector('.main-icon');
+
 const currDegs = document.getElementsByClassName('curr-degs');
-const humidityAndWind = document.getElementsByClassName('humiditywind');
 const weatherDesc = document.querySelector('.weather-desc');
+const humidityAndWind = document.getElementsByClassName('humiditywind');
 
 // Time and Day Elements
 const timeDiv = document.querySelector('.time');
