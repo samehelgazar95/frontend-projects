@@ -31,7 +31,7 @@ function tempHandler(tempK) {
 // Fetch Country Data
 async function fetchCity(cityName) {
   const res = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${weatherApiKey}`
+    `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${weatherApiKey}`
   );
   if (!res.ok) throw new Error(res.statusText);
 
@@ -141,7 +141,7 @@ async function updateWeather(city) {
 async function fetchTimeZone() {
   const { lat, lon } = await fetchCity(cityName);
   const res = await fetch(
-    `http://api.timezonedb.com/v2.1/get-time-zone?key=${timeApiKey}&format=json&by=position&lat=${lat}&lng=${lon}`
+    `https://api.timezonedb.com/v2.1/get-time-zone?key=${timeApiKey}&format=json&by=position&lat=${lat}&lng=${lon}`
   );
   if (!res.ok) throw new Error(res.statusText);
 
@@ -155,7 +155,9 @@ async function fetchAndUpdateTime() {
   const timeZone = await fetchTimeZone();
 
   try {
-    const res = await fetch(`http://worldtimeapi.org/api/timezone/${timeZone}`);
+    const res = await fetch(
+      `https://worldtimeapi.org/api/timezone/${timeZone}`
+    );
     if (!res.ok) throw new Error(res.statusText);
 
     const data = await res.json();
