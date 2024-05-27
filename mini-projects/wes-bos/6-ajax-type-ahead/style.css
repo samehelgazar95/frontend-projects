@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+main {
+  margin: 20px auto;
+  border: 2px solid orange;
+  padding: 10px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main form {
+  width: 70%;
+}
+
+main form input {
+  border: 1px solid black;
+
+  text-align: center;
+  padding: 10px;
+  font-size: larger;
+  width: 100%;
+}
+
+main .data {
+  width: 60%;
+}
+
+main .data ul li {
+  list-style: none;
+  padding: 10px;
+  background-color: beige;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .data ul li:nth-child(odd) {
+  transform: perspective(100px) rotateX(-3deg) translateY(3px);
+}
+
+main .data ul li:nth-child(even) {
+  transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+}
+
+.hl {
+  background-color: #ffc600;
+}

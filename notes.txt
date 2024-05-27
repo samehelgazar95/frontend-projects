@@ -1,0 +1,48 @@
+## CSS
+1- Always avoid using <br> tag.
+
+2- Use classes rather than ids.
+more than one element can have the same class, id is unique.
+
+3- Semantic HTML:
+div vs article, section, nav, aside, header, footer, figure, aside: - div: is like a cardbox, that has no label on it. it's more general than article. - article: is like a cardbox, that has a label on it. it's more specific than div. - section: is a larger macro element, that can contain articles. it's more general than article. - nav: is a navigation bar. - aside: is a sidebar. - header: is a header. - footer: is a footer. - figure: is a figure. - aside: is an aside.
+
+===========================================================
+
+## JavaScript
+console.log(+undefined); // NaN
+console.log(+null); // 0
+console.log(null > 0); // false
+console.log(null < 0); // false
+console.log(null == 0); // true
+
+---------
+
+|| returns the first truthy value.
+?? returns the first defined value.
+let height = 0;
+alert(height || 100); // 100
+alert(height ?? 100); // 0
+
+---------
+
+A parameter is the variable listed inside the parentheses in the function declaration (it’s a declaration time term).
+An argument is the value that is passed to the function when it is called (it’s a call time term).
+
+---------
+
+### Function Expressions:
+let sayHi = function() {
+  alert( "Hello" );
+};
+
+### Function Declarations
+function() {
+  alert( "Hello" );
+}
+
+----------------------------------------------------
+DOM Properties and Event Offsets Reference >> IMPORTAND DIRECTORY
+----------------------------------------------------
+
+

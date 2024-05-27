@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate Random Quote</title>
+  </head>
+  <body>
+    <h1>Generate Random Quote</h1>
+    <button id="btn">Generate</button>
+    <p id="para"></p>
+    <script>
+      const quotes = [
+        'Hey quote',
+        'hello quote',
+        'yes quote',
+        'no quote',
+        'egypt',
+        'palestine',
+        'wow',
+        'great',
+        'google',
+        'linux',
+        'ubuntu',
+        'unix',
+        'mac',
+        'what',
+        'ooh',
+        'enough',
+      ];
+      const btn = document.getElementById('btn');
+      const para = document.getElementById('para');
+
+      function genQuote() {
+        let usedIndex = new Set();
+
+        btn.addEventListener('click', () => {
+          let randIndex = Math.floor(Math.random() * quotes.length);
+          if (usedIndex.has(randIndex)) return;
+          usedIndex.add(randIndex);
+          para.innerHTML = quotes[randIndex];
+        });
+      }
+
+      genQuote();
+    </script>
+  </body>
+</html>

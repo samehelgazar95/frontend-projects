@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/html&css/styles.css" />
+    <title>Coffee Masters</title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="/html&css/coffee_masters_logo.png"
+        alt="Brand Logo"
+        class="brand-logo"
+      />
+      <h1 class="brand-name">Coffee Masters</h1>
+    </header>
+
+    <main>
+      <section class="cards">
+        <section class="items card">
+          <h2>items</h2>
+          <section class="items-details">
+            <article class="single-item">
+              <div class="item-counter">1X</div>
+              <div class="item">
+                <div class="item-name">Cappucino</div>
+                <div class="item-details">Light Foam</div>
+              </div>
+              <div class="item-price">$6.00</div>
+            </article>
+
+            <article class="single-item">
+              <div class="item-counter">1X</div>
+              <div class="item">
+                <div class="item-name">Cappucino</div>
+                <div class="item-details">Almond Milk</div>
+                <div class="item-details">Double Espresso Shot</div>
+              </div>
+              <div class="item-price">$8.90</div>
+            </article>
+
+            <article class="single-item">
+              <div class="item-counter">1X</div>
+              <div class="item">
+                <div class="item-name">Croissant</div>
+                <div class="item-details">Butter</div>
+              </div>
+              <div class="item-price">$5.37</div>
+            </article>
+          </section>
+        </section>
+
+        <section class="pay">
+          <section class="pay-name card">
+            <h2>name</h2>
+            <div class="visa-input client-details">
+              <label for="client-name">name for order</label>
+              <input type="text" name="client-name" />
+            </div>
+          </section>
+
+          <section class="pay-visa card">
+            <h2>payment</h2>
+            <div class="visa-input card-details">
+              <label for="card-number">card number</label>
+              <input type="text" name="card-number" />
+            </div>
+            <div class="visa-input cvv">
+              <label for="cvv"><span>cvv</span> number</label>
+              <input type="text" name="cvv" />
+            </div>
+          </section>
+        </section>
+      </section>
+
+      <section class="table-section">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Subtotal:</td>
+              <td>$19.27</td>
+            </tr>
+            <tr>
+              <td>Tax:</td>
+              <td>$0.96</td>
+            </tr>
+            <tr>
+              <td>Total:</td>
+              <td>$20.23</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="btn">
+        <button type="submit" class="place-order">Place Order</button>
+      </div>
+    </main>
+  </body>
+</html>

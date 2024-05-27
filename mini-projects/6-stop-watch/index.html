@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Watch</title>
+  </head>
+  <body>
+    <h1>Stop Watch</h1>
+
+    <main id="main">
+      <div id="timer">
+        <span id="hr">00</span> : <span id="min">00</span> :
+        <span id="sec">00</span>
+      </div>
+      <div id="btns">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+      </div>
+    </main>
+    <script>
+      let hr = document.getElementById('hr');
+      let min = document.getElementById('min');
+      let sec = document.getElementById('sec');
+      const start = document.getElementById('start');
+      const stop = document.getElementById('stop');
+      const reset = document.getElementById('reset');
+      let timerId;
+
+      function timerInterval() {
+        timerId = setInterval(() => {
+          sec.innerHTML = +sec.innerHTML + 1;
+          // handle sec
+          if (sec.innerHTML < 10) sec.innerHTML = '0' + +sec.innerHTML;
+          // handle min
+          if (sec.innerHTML == '60') {
+            sec.innerHTML = '00';
+            min.innerHTML = +min.innerHTML + 1;
+            if (min.innerHTML < 10) min.innerHTML = '0' + +min.innerHTML;
+          }
+          // handle hr
+          if (min.innerHTML == '60') {
+            min.innerHTML = '00';
+            hr.innerHTML = +hr.innerHTML + 1;
+            if (hr.innerHTML < 10) hr.innerHTML = '0' + +hr.innerHTML;
+          }
+        }, 1000);
+      }
+
+      start.addEventListener('click', () => timerInterval());
+      stop.addEventListener('click', () => clearInterval(timerId));
+      reset.addEventListener('click', () => {
+        clearInterval(timerId);
+        hr.innerHTML = '00';
+        min.innerHTML = '00';
+        sec.innerHTML = '00';
+      });
+    </script>
+  </body>
+</html>

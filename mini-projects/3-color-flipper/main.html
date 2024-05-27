@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Flipper</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0px;
+        margin: 0px;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: grey;
+      }
+
+      main {
+        border: 1px solid black;
+        margin: 20px;
+        width: 50vw;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background-color: white;
+      }
+
+      main button {
+        width: 100px;
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid black;
+        border-radius: 10px;
+        font-weight: bold;
+      }
+
+      main button:hover {
+        cursor: pointer;
+      }
+
+      .green {
+        background-color: green;
+      }
+      .red {
+        background-color: red;
+      }
+      .blue {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title brand logo">Color Flipper</h1>
+
+    <main id="main">
+      <button class="green">Green</button>
+      <button class="red">Red</button>
+      <button class="blue">Blue</button>
+      <button class="random" id="default">Random</button>
+    </main>
+
+    <div class="clock">
+      <span class="hr"></span> : <span class="min"></span> :
+      <span class="sec"></span> <span class="pmam"></span>
+    </div>
+
+    <div class="timer">
+      <span class="min"></span> :
+      <span class="sec"></span>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

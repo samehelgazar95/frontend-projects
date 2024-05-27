@@ -1,0 +1,41 @@
+:root {
+  --color: #ffa500;
+  --spacing: 10px;
+  --filter: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .vars {
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  gap: 40px;
+}
+
+main .image {
+  width: 500px;
+  border-radius: 2px;
+  border: var(--spacing) solid var(--color);
+  filter: blur(var(--filter));
+}
+
+main .image img {
+  max-width: 100%;
+  display: block;
+  border-radius: inherit;
+}

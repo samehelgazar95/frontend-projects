@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Variables</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Update CSS Variables with <span>JS</span></h1>
+    <main>
+      <div class="vars">
+        <div class="space">
+          <label>Spacing:</label>
+          <input
+            type="range"
+            name="spacing"
+            min="0"
+            max="50"
+            value="10"
+            data-sizing="px"
+          />
+        </div>
+        <div class="blur">
+          <label>Blur:</label>
+          <input
+            type="range"
+            name="filter"
+            min="0"
+            max="10"
+            value="0"
+            data-sizing="px"
+          />
+        </div>
+        <div class="color">
+          <label>Color:</label>
+          <input type="color" name="color" value="#ffa500" />
+        </div>
+      </div>
+
+      <div class="image">
+        <img
+          src="./20240517-TarangireElephants_ROW2863088769_UHD.jpg"
+          alt="elephants"
+        />
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
