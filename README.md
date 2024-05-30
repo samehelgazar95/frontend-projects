@@ -1,4 +1,4 @@
-# Here are my Frontend milestones projects
+# Here are my Frontend projects
 
 ## What's it in here:
 
