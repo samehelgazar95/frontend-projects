@@ -43,6 +43,68 @@ function() {
 
 ----------------------------------------------------
 DOM Properties and Event Offsets Reference >> IMPORTAND DIRECTORY
+
 ----------------------------------------------------
 
+IIFE >> Immediately Invoked Function Expression
 
+(function () {
+  console.log('IIFE');
+})();
+
+----------------------------------------------------
+
+var, let, const
+
+>> var: *DON'T USE IT*
+- It hoistes all variables declaration (JUST THE DECLARATION) to the gloabal scope -
+(function testVar() {
+  // var x; The Hoisting Concept
+  
+  var x = 5;
+  
+  if (true) {
+    var x = 10;
+  }
+  
+  console.log(x); // 10
+})();
+
+(function testVar() {
+  // var x; The Hoisting Concept >> Declared Without Assigning the Value
+  // var y; The Hoisting Concept >> Declared Without Assigning the Value
+  
+  console.log(x); // undefined
+  console.log(y); // undefined
+  
+  var x = 10;
+  var y;
+})();
+
+- var is Function Scope -
+(function testVar() {
+  // var x; The Hoisting Concept >> Declared Without Assigning the Value
+  
+  var x;
+  x = 5;
+  
+  if (true) {
+    var x = 10;
+  }
+
+  (function funcScope() {
+    var x = 15;
+    console.log(x); // 15
+  })();
+  
+  console.log(x); // 10
+})();
+
+
+>> let:
+- No Hoisting, Block Scope -
+
+>> const:
+- No Hoising, Block Scope, No Reassign, Arrays & Objects are Mutable - 
+
+----------------------------------------------------
