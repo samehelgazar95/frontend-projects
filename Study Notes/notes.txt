@@ -108,3 +108,117 @@ var, let, const
 - No Hoising, Block Scope, No Reassign, Arrays & Objects are Mutable - 
 
 ----------------------------------------------------
+
+Symbol
+
+- Symbols and Well Known Symbols (WKS)
+https://www.keithcirkel.co.uk/metaprogramming-in-es6-symbols/#symbolspecies
+
+- WKS:
+[1] >>>>>>>> Symbol.iterator:
+  const obj = {
+    name: 'same',
+    age: 29,
+    [Symbol.iterator]() {
+      let step = 0;
+      let keys = Object.keys(obj);
+      return {
+        next() {
+          return {
+            value: obj[keys[step]],
+            done: step++ === keys.length,
+          };
+        },
+      };
+    },
+  };
+
+  for (let ele of obj) {
+    console.log(ele);
+  }
+
+[2] >>>>>>>> Symbol.isConcatSpreadable:
+class Arrayish extends Array {
+  get [Symbol.isConcatSpreadable]() {
+    return true;
+  }
+}
+
+class Collection extends Array {
+  get [Symbol.isConcatSpreadable]() {
+    return false;
+  }
+}
+
+let arrayishInstance = new Arrayish();
+arrayishInstance[0] = 0;
+arrayishInstance[1] = 1;
+let collectionInstance = new Collection();
+collectionInstance[0] = 2;
+collectionInstance[1] = 3;
+
+let spreadable = [].concat(arrayishInstance).concat(collectionInstance); // NOT THIS [...arrayishInstance, ...collectionInstance];
+console.log(spreadable); // [0, 1, Collection(2) [2, 3]]
+
+[3] >>>>>>>> Symbol.hasInstance:
+  class MyClass {
+    static [Symbol.hasInstance](leftHand) {
+      return typeof leftHand === 'number'
+    }
+  }
+
+  let num = 7;
+  console.log(num instanceof MyClass); // true
+  console.log(MyClass[Symbol.hasInstance](num)); // true
+
+[4] >>>>>>>> Symbol.species:
+class MyArray extends Array {
+  static get [Symbol.species]() {
+    return this;
+  }
+}
+
+let myArr = new MyArray(1, 2, 3, 4);
+let mappedArr = myArr.map((x) => x * x);
+
+console.log(mappedArr instanceof MyArray); // true
+console.log(mappedArr instanceof Array); // true
+
+[5] >>>>>>>> Symbol.toPrimitive:
+class MyObj {
+  constructor(val) {
+    this.val = val;
+  }
+
+  [Symbol.toPrimitive](coercion) {
+    if (coercion === 'number') return this.val;
+    if (coercion === 'string') return `${this.val}`; // I can acheive the same with the toString()
+    return this.val;
+  }
+
+  toString() {
+    return `${this.val}`; // Same as above Symbol.toPrimitive ('string')
+  }
+}
+
+const obj = new MyObj(7);
+
+console.log(obj);
+console.log(+obj);
+console.log('' + obj);
+console.log(`${obj}`);
+
+[6] >>>>>>>> Symbol.toStringTag:
+class IamCool {
+  constructor(name) {
+    this.name = name;
+  }
+
+  get [Symbol.toStringTag]() {
+    return 'IamCool';
+  }
+}
+
+const whoiam = new IamCool('Sameh');
+
+console.log(whoiam.toString());
