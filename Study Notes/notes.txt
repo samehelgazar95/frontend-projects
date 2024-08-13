@@ -42,7 +42,7 @@ function() {
 }
 
 ----------------------------------------------------
-DOM Properties and Event Offsets Reference >> IMPORTAND DIRECTORY
+DOM Properties and Event Offsets Reference >> IMPORTANT DIRECTORY
 
 ----------------------------------------------------
 
